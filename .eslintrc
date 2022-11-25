@@ -1,0 +1,24 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "semistandard",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "ignorePatterns": ["node_modules/"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "comma-dangle": ["warn", "always-multiline"],
+    "curly": ["error", "all"],
+    "max-len": ["error", { "code": 100 }],
+    "no-nested-ternary": "error",
+    "no-unused-vars": ["warn", { "varsIgnorePattern": "^_unused" }],
+    "padded-blocks": "off"
+  }
+}

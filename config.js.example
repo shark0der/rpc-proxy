@@ -1,0 +1,15 @@
+const matchers = require('./src/matchers');
+const actions = require('./src/actions');
+
+module.exports = {
+  port: 8545,
+  rpcs: {
+    infura: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+    flashbots: 'https://rpc.flashbots.net',
+  },
+  fallback: 'infura',
+  rules: [
+    { matcher: matchers.isRawTx, action: actions.makeTxPrivate, rpc: 'flashbots' },
+    { matcher: matchers.any, action: actions.identity, rpc: 'infura' },
+  ],
+};
